@@ -1,13 +1,17 @@
-const fn = require("../describe-test");
+// Connection of describe-test.js
+const fn = require("../describe-test.js");
 
+// Function of basic equal
 function expect(value) {
     return {
+        // Check is this x === y
         toBe: exp => {
             if (value === exp)
                 console.log('\x1b[32m', 'Success');
             else
                 console.log('\x1b[31m', 'Failed');
         },
+        // Check is not this x !== y
         toBeNot: exp => {
             if (value !== exp)
                 console.log('\x1b[32m', 'Success');
@@ -17,10 +21,14 @@ function expect(value) {
     }
 }
 
+// Sum of a + b
 const sum = (a, b) => a + b;
 
+// Call test
+// First global describe
 fn.describe('Native matcher:', () => {
-    fn.test('sume values', () => {
+    // Second describe of tests
+    fn.test('sum values', () => {
         expect(sum(41, 1)).toBe(42)
         expect(sum(1, 4)).toBeNot(5)
     })
