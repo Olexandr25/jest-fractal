@@ -1,5 +1,5 @@
 // Connection of describe-test.js
-const fn = require("../describe-test.js");
+const { describe, test } = require("../describe-test.js");
 
 // Function of basic equal
 function expect(value) {
@@ -26,9 +26,9 @@ const sum = (a, b) => a + b;
 
 // Call test
 // First global describe
-fn.describe('Native matcher:', () => {
+describe('Native matcher:', () => {
     // Second describe of tests
-    fn.test('sum values', () => {
+    test('sum values', () => {
         expect(sum(41, 1)).toBe(42)
         expect(sum(1, 4)).toBeNot(5)
     })
