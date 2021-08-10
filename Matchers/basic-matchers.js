@@ -1,44 +1,26 @@
-@import "../describe-test";
-
-var colors = require('colors');
+const fn = require("../describe-test");
 
 function expect(value) {
     return {
         toBe: exp => {
             if (value === exp)
-                console.log('Success'.green);
+                console.log('\x1b[32m', 'Success');
             else
-                console.log('Failed'.red);
+                console.log('\x1b[31m', 'Failed');
         },
         toBeNot: exp => {
             if (value !== exp)
-                console.log('Success'.green);
+                console.log('\x1b[32m', 'Success');
             else
-                console.log('Failed'.red);
-
+                console.log('\x1b[31m', 'Failed');
         }
     }
 }
 
 const sum = (a, b) => a + b;
 
-// expect(sum(41, 1)).toBe(42);
-// expect(sum(1, 4)).toBe(10);
-
-
-// Make describe function
-// function describe(str, callback) {
-//     console.log(colors.blue(str));
-//     callback();
-// }
-
-// function test(str, callback) {
-//     console.log(colors.magenta(str));
-//     callback();
-// }
-
-describe('Native matcher:', () => {
-    test('sume values', () => {
+fn.describe('Native matcher:', () => {
+    fn.test('sume values', () => {
         expect(sum(41, 1)).toBe(42)
         expect(sum(1, 4)).toBeNot(5)
     })
