@@ -4,7 +4,6 @@ const { describe, test } = require("../describe-test.js");
 // Connection Lodash library
 var _ = require('lodash');
 
-
 // Function of basic equal
 function expect(exp) {
     return {
