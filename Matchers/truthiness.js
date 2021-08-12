@@ -21,7 +21,6 @@ function expect(exp) {
     }
 }
 
-
 // First describe
 describe('Truthiness matcher:', () => {
     // Second describe of tests
