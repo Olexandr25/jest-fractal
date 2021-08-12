@@ -8,39 +8,13 @@ var _ = require('lodash');
 function expect(exp) {
     return {
         // Check is this x === y
-        toBe: value => {
-            if (exp === value)
-                console.log('\x1b[32m', 'Success');
-            else
-                console.log('\x1b[31m', 'Failed');
-        },
+        toBe: value => (exp === value) ? console.log('\x1b[32m', 'Success') : console.log('\x1b[31m', 'Failed'),
         // Check is not this x !== y
-        toBeNot: value => {
-            if (exp !== value)
-                console.log('\x1b[32m', 'Success');
-            else
-                console.log('\x1b[31m', 'Failed');
-        },
+        toBeNot: value => (exp !== value) ? console.log('\x1b[32m', 'Success') : console.log('\x1b[31m', 'Failed'),
         // Check Deep equality
-        // ! Doesn't work
-        // toEqual: value => {
-        //     const isArrayEqual = (value, exp) => _.isEmpty(_.xorWith(value, exp, _.isEqual));
-
-        //     if (isArrayEqual)
-        //         console.log('\x1b[32m', 'Success');
-        //     else
-        //         console.log('\x1b[31m', 'Failed');
-        // },
-
-        toEqualConvertToString: value => {
-            // compare lengths - can save a lot of time 
-            let result = value.length === exp.length && value.every((v, index) => v === exp[index])
-            if (result)
-                console.log('\x1b[32m', 'Success');
-            else
-                console.log('\x1b[31m', 'Failed');
-        }
-
+        toEqual: value => _.isMatch(exp, value) ? console.log('\x1b[32m', 'Success') : console.log('\x1b[31m', 'Failed'),
+        toEqualConvertToString: value => (value.length === exp.length && value.every((v, index) => v === exp[index])) ? 
+            console.log('\x1b[32m', 'Success') : console.log('\x1b[31m', 'Failed')
     }
 }
 
@@ -56,7 +30,9 @@ const c = [1, 2, 3];
 describe('Native matcher:', () => {
     // Second describe of tests
     test('sum values', () => {
-        expect(sum(41, 1)).toBe(42)
-        expect(sum(1, 4)).toBeNot(6)
+        expect(sum(41, 1)).toBe(42);
+        expect(sum(1, 4)).toBeNot(6);
+        expect(a).toEqual(c);
+        expect({a: undefined, b: 2}).toEqual({b: 2});
     })
 })
