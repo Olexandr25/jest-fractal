@@ -29,7 +29,7 @@ const c = [1, 2, 3];
 // First global describe
 describe('Native matcher:', () => {
     // Second describe of tests
-    test('sum values', () => {
+    test('values', () => {
         expect(sum(41, 1)).toBe(42);
         expect(sum(1, 4)).toBeNot(6);
         expect(a).toEqual(c);
