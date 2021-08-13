@@ -12,6 +12,9 @@
 
 write first function describe, inside write function test, after this steps we can write our tests
 
+## Example how write test
+
+
 ## Installing npm jest-fractal
 
 npm i jestfractal
