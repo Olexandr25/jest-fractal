@@ -4,7 +4,7 @@
   "description": "nothing intresting",
   "main": "index.js",
   "scripts": {
-    "test": "node src/test/app.js"
+    "test": "node src/test-programme/app.js"
   },
   "author": "gavrick",
   "license": "ISC",
