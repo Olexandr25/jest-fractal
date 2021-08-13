@@ -20,3 +20,10 @@ describe('String matcher:', () => {
         expect('pizzaa').stringContaining('zz');
     })
 })
+
+
+var str = "Stringa is here";
+
+str.forEach(element => {
+    
+});
