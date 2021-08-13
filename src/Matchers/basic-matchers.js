@@ -36,3 +36,5 @@ describe('Native matcher:', () => {
         expect({a: undefined, b: 2}).toEqual({b: 2});
     })
 })
+
+module.exports = { expect };
