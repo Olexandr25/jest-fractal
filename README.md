@@ -5,8 +5,8 @@
 1. make npm i - for installing lodash library
 2. write tests only in src/test/... {filename.test.js}
 3. in every file make require:
-   - 3.1. const { describe, test } = require("../src/describe-test.js)
-   - 3.2. const { fnName } = require("../src/Matchers/...)
+   - const { describe, test } = require("../src/describe-test.js)
+   - const { fnName } = require("../src/Matchers/...)
 
 ## Writing tests
 
@@ -14,4 +14,4 @@ write first function describe, inside write function test, after this steps we c
 
 ---
 
-### npm i jestfractal
+npm i jestfractal
