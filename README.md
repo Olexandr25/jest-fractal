@@ -11,3 +11,7 @@
 ## Writing tests
 
 write first function describe, inside write function test, after this steps we can write our tests
+
+---
+
+### npm i jestfractal
