@@ -1,5 +1,5 @@
 // Connection of describe-test.js
-const { describe, test } = require("../describe-test.js");
+const { describe, test } = require("../../describe-test.js");
 
 // Connection Lodash library
 var _ = require('lodash');
